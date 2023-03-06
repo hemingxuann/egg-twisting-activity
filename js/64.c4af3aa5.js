@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkegg_twisting_activity"]=self["webpackChunkegg_twisting_activity"]||[]).push([[64],{64:function(t,n,e){e.r(n),e.d(n,{default:function(){return a}});var i=function(){var t=this,n=t._self._c;return n("div",{staticClass:"egg-user-center"},[t._v("1231231")])},s=[],u={name:"App",components:{}},c=u,l=e(1),r=(0,l.Z)(c,i,s,!1,null,null,null),a=r.exports}}]);
+//# sourceMappingURL=64.c4af3aa5.js.map
