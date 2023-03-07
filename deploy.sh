@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
 # 如果你要部署在 https://<USERNAME>.github.io/<REPO>
-git push -f git@gitee.com:hemingxuann/egg-twisting-activity.git master:gh-pages
+git push -f git@github.com:hemingxuann/egg-twisting-activity.git master:gh-pages
 
 cd -
