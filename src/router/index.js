@@ -11,23 +11,30 @@ const routes = [
     {
         path: '/home',
         name: 'home',
+
         component: () => import('@/pages/home.vue'),
+        meta: {
+            title: '心愿扭蛋机',
+        },
     },
     {
         path: '/user-center',
         name: 'user-center',
         component: () => import('@/pages/user-center.vue'),
+        meta: {
+            title: '个人中心',
+        },
     },
 ]
 
 const router = new VueRouter({
-    // mode: 'history',
-    mode: 'hash',
+    mode: 'history',
+    // mode: 'hash',
     base: process.env.BASE_URL,
     routes,
 })
-// const VueRouterPush = VueRouter.prototype.push
-// VueRouter.prototype.push = function push(to) {
-//     return VueRouterPush.call(this, to).catch((err) => err)
-// }
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.title
+    next()
+})
 export default router

@@ -9,8 +9,8 @@
             <img class="egg-item egg-item4" ref="eggItem4" src="@/assets/img/egg4.png" alt="" />
             <img class="egg-item egg-item5" ref="eggItem5" src="@/assets/img/egg5.png" alt="" />
             <img class="egg-item egg-item6" ref="eggItem6" src="@/assets/img/egg6.png" alt="" />
-            <img class="egg-item egg-item7" ref="eggItem7" src="@/assets/img/egg7.png" alt="" />
-            <img class="egg-item egg-item8" ref="eggItem8" src="@/assets/img/egg8.png" alt="" />
+            <img class="egg-item egg-item7" ref="eggItem7" src="@/assets/img/egg4.png" alt="" />
+            <img class="egg-item egg-item8" ref="eggItem8" src="@/assets/img/egg5.png" alt="" />
         </div>
         <div class="lottery-opportunity">
             <span>剩余 1 次抽奖机会</span>
@@ -20,14 +20,14 @@
             <img class="egg-twist2" src="@/assets/img/egg-twist2.png" />
         </div>
         <div class="egg-prizewinning" v-if="eggPrizewinning">
-            <img class="egg-separate3" src="@/assets/img/egg2-separate3.png" />
+            <img class="egg" src="@/assets/img/egg1.png" />
         </div>
         <div class="prizewinning-pop-mark" v-if="prizewinningPopMark">
             <div class="prizewinning-pop">
                 <div class="egg-separate-box">
-                    <img class="egg-separate1" src="@/assets/img/egg2-separate1.png" />
+                    <img class="egg-separate-top" src="@/assets/img/egg1-top.png" />
                     <div class="prizewinning-pop-content"></div>
-                    <img class="egg-separate2" src="@/assets/img/egg2-separate2.png" />
+                    <img class="egg-separate-bottom" src="@/assets/img/egg1-bottom.png" />
                 </div>
                 <div class="once-more" @click="onceMore"><span>再来一次</span></div>
             </div>
@@ -56,12 +56,15 @@ export default {
             this.$refs.eggItem1.style.animationName = 'move1'
             this.$refs.eggItem2.style.animationName = 'move2'
             setTimeout(() => {
+                // 按钮回转
                 this.detonateContact = false
             }, 1000)
             setTimeout(() => {
+                // 蛋划出
                 this.eggPrizewinning = true
             }, 3000)
             setTimeout(() => {
+                // 弹窗出现
                 this.prizewinningPopMark = true
             }, 5000)
         },
@@ -149,7 +152,7 @@ export default {
     }
     .lottery-opportunity {
         position: absolute;
-        top: 99vw;
+        top: 98vw;
         left: 51vw;
         padding: 0.4vw 2.4vw;
         background-color: #e3496e;
@@ -164,8 +167,8 @@ export default {
         width: 20vw;
         height: 20vw;
         position: absolute;
-        top: 107.8vw;
-        left: 55vw;
+        top: 105.8vw;
+        left: 56.8vw;
         transition: 0.8s;
         transform: rotate(0deg);
         .egg-twist1 {
@@ -196,7 +199,7 @@ export default {
         animation-duration: 2s;
         animation-name: winningAnimation;
         animation-fill-mode: forwards;
-        .egg-separate3 {
+        .egg {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -235,18 +238,18 @@ export default {
                 display: inline-block;
                 position: relative;
                 transform: scale(0.4, 0.4);
-                animation-delay: 0.5s;
-                animation-duration: 0.5s;
+                animation-delay: 0.1s;
+                animation-duration: 0.4s;
                 animation-name: eggSeparateBox;
                 animation-fill-mode: forwards;
-                .egg-separate1 {
+                .egg-separate-top {
                     width: 57vw;
                     height: 31vw;
                     position: absolute;
                     top: -13vw;
                     left: 50%;
                     transform: translateX(-50%);
-                    animation-delay: 1s;
+                    animation-delay: 0.5s;
                     animation-duration: 0.5s;
                     animation-name: eggSeparate1;
                     animation-fill-mode: forwards;
@@ -260,19 +263,19 @@ export default {
                     position: relative;
                     z-index: 1;
                     transform: scale(0, 0);
-                    animation-delay: 1s;
-                    animation-duration: 1s;
+                    animation-delay: 0.5s;
+                    animation-duration: 0.5s;
                     animation-name: prizewinningPopContent;
                     animation-fill-mode: forwards;
                 }
-                .egg-separate2 {
+                .egg-separate-bottom {
                     width: 57vw;
                     height: 31vw;
                     position: absolute;
                     top: 13vw;
                     left: 50%;
                     transform: translateX(-50%);
-                    animation-delay: 1s;
+                    animation-delay: 0.5s;
                     animation-duration: 0.5s;
                     animation-name: eggSeparate2;
                     animation-fill-mode: forwards;
@@ -305,9 +308,9 @@ export default {
         opacity: 0;
         transform: translate(0vw, -6vw) scale(1, 1);
     }
-    60% {
+    55% {
         opacity: 1;
-        transform: translate(0vw, 13vw) scale(1, 1);
+        transform: translate(0vw, 10vw) scale(1, 1);
     }
     90% {
         opacity: 1;

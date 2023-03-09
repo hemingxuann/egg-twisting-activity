@@ -23,3 +23,17 @@ export const activityLottery = (data) => {
         data,
     })
 }
+// 我的礼品
+export const personalprize = (data) => {
+    return service({
+        url: `/activities/personal/prize${objToUrl(data)}`,
+        method: 'get',
+    })
+}
+// 我的分享
+export const personalShar = (data) => {
+    return service({
+        url: `/activities/personal/share${objToUrl(data)}`,
+        method: 'get',
+    })
+}

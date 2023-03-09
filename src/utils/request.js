@@ -8,7 +8,7 @@ let service = axios.create({
 service.interceptors.request.use(
     (config) => {
         config.headers['shopid'] = 'FK'
-        config.headers['access-token'] = 'wtn:2be9da7c2a38f6592fe6341b279b8208SIFNWtCRtk16781919112'
+        config.headers['access-token'] = 'wtn:3db2984d40483d808fb99b3f0152aa6bShpcJFNX5g16783753782'
         return config
     },
     (error) => {
@@ -18,7 +18,7 @@ service.interceptors.request.use(
 //响应拦截器
 service.interceptors.response.use(
     async (response) => {
-        return response
+        return response.data
     },
     (error) => {
         return Promise.reject(error)
